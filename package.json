@@ -1,11 +1,11 @@
 {
-  "name": "hayase",
+  "name": "AnimeTv",
   "version": "6.4.18",
-  "description": "Hayase - Torrent streaming made simple",
+  "description": "AnimeTv - Torrent streaming made simple",
   "main": "./out/main/index.js",
   "repository": "github:hayase-app/ui",
-  "author": "ThaUnknown_",
-  "homepage": "https://hayase.app",
+  "author": "tehransoftware",
+  "homepage": "https://animetv.ahmdrza.ir",
   "packageManager": "pnpm@9.14.4",
   "scripts": {
     "format": "prettier --write .",

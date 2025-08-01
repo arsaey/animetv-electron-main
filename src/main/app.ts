@@ -36,7 +36,7 @@ autoUpdater.logger = log
 
 const TRANSPARENCY = store.get('transparency')
 
-const BASE_URL = is.dev ? 'https://hayase.app/' : 'https://hayase.app/'
+const BASE_URL = is.dev ? 'https://animetv.ahmdrza.ir/' : 'https://animetv.ahmdrza.ir/'
 
 protocol.registerSchemesAsPrivileged([
   { scheme: 'https', privileges: { standard: true, bypassCSP: true, allowServiceWorkers: true, supportFetchAPI: true, corsEnabled: false, stream: true, codeCache: true, secure: true } }
@@ -44,7 +44,7 @@ protocol.registerSchemesAsPrivileged([
 export default class App {
   torrentProcess = utilityProcess.fork(forkPath, [], {
     stdio: ['ignore', 'pipe', 'pipe'],
-    serviceName: 'Hayase Torrent Client'
+    serviceName: 'AnimeTv Torrent Client'
   })
 
   mainWindow = new BrowserWindow({
@@ -58,7 +58,7 @@ export default class App {
     maximizable: true,
     fullscreenable: true,
     show: false,
-    title: 'Hayase',
+    title: 'AnimeTv',
     icon,
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
@@ -172,10 +172,10 @@ export default class App {
       callback(details)
     })
 
-    this.tray.setToolTip('Hayase')
+    this.tray.setToolTip('AnimeTv')
     // this needs to be way better lol
     this.tray.setContextMenu(Menu.buildFromTemplate([
-      { label: 'Hayase', enabled: false },
+      { label: 'AnimeTv', enabled: false },
       { type: 'separator' },
       {
         label: 'Show App',
@@ -185,7 +185,7 @@ export default class App {
         }
       },
       { type: 'separator' },
-      { label: 'Exit Hayase', click: () => this.destroy() }
+      { label: 'Exit AnimeTv', click: () => this.destroy() }
     ]))
     this.tray.on('click', () => {
       this.mainWindow.show()
@@ -240,7 +240,7 @@ export default class App {
     //   notification.show()
     // })
 
-    electronApp.setAppUserModelId('com.github.hayase-app')
+    electronApp.setAppUserModelId('com.github.tehransoftware')
     if (process.platform === 'win32') {
       // this message usually fires in dev-mode from the parent process
       process.on('message', data => {
@@ -268,10 +268,10 @@ export default class App {
     let crashcount = 0
     this.mainWindow.webContents.on('render-process-gone', async (_e, { reason }) => {
       if (reason === 'crashed') {
-        if (++crashcount > 10) {
+        if (++crashcount > 100) {
           // TODO
-          await dialog.showMessageBox({ message: 'Crashed too many times.', title: 'Hayase', detail: 'App crashed too many times. For a fix visit https://hayase.watch/faq/', icon })
-          shell.openExternal('https://hayase.watch/faq/')
+//          await dialog.showMessageBox({ message: 'Crashed too many times.', title: 'AnimeTv', detail: 'App crashed too many times. For a fix visit https://ayase.watch/faq/', icon })
+  //        shell.openExternal('https://AnimeTv.watch/faq/')
         } else {
           app.relaunch()
         }
@@ -316,27 +316,9 @@ export default class App {
         items: [
           {
             type: 'task',
-            program: 'hayase://schedule/',
+            program: 'AnimeTv://schedule/',
             title: 'Airing Schedule',
             description: 'Open The Airing Schedule'
-          },
-          {
-            type: 'task',
-            program: 'hayase://w2g/',
-            title: 'Watch Together',
-            description: 'Create a New Watch Together Lobby'
-          },
-          {
-            type: 'task',
-            program: 'hayase://donate/',
-            title: 'Donate',
-            description: 'Support This App'
-          },
-          {
-            type: 'task',
-            program: 'hayase://devtools/',
-            title: 'Devtools',
-            description: 'Open Devtools'
           }
         ]
       }

@@ -1,5 +1,5 @@
-appId: com.github.thaunknown.miru
-productName: Hayase
+appId: com.github.tehransoftware
+productName: AnimeTv
 directories:
   buildResources: build
 files:
@@ -17,7 +17,7 @@ asarUnpack:
   - resources/**
   - '**/*.node'
 win:
-  executableName: Hayase
+  executableName: AnimeTv
   target:
     - target: nsis
       arch:
@@ -73,20 +73,19 @@ linux:
   desktop:
     Type: "Application"
     Encoding: "UTF-8"
-    Name: "Hayase"
+    Name: "AnimeTv"
     Comment: "Bittorrent streaming software for cats"
     Keywords: "anime"
     Terminal: "false"
-    MimeType: "x-scheme-handler/hayase;"
+    MimeType: "x-scheme-handler/AnimeTv;"
 npmRebuild: false
 publish:
   provider: github
-  owner: hayase-app
+  owner: tehransoftware
   repo: ui
-electronDist: electron-dist
 protocols:
-  - name: hayase
+  - name: AnimeTv
     schemes:
-      - hayase
+      - AnimeTv
 electronLanguages:
   - en-US

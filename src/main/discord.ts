@@ -51,7 +51,7 @@ export default class Discord {
         pid: process.pid,
         activity: {
           type: 3,
-          name: 'Hayase',
+          name: 'AnimeTv',
           state: this.allowDiscordDetails ? this.session?.description ?? 'Streaming anime torrents! 🍿' : 'Streaming anime torrents! 🍿',
           details: this.allowDiscordDetails ? this.session?.title ?? 'Looking around...' : 'Looking around...',
           timestamps: {
@@ -60,16 +60,12 @@ export default class Discord {
           },
           assets: {
             large_image: this.allowDiscordDetails && this.session?.image ? this.session.image : 'logo',
-            large_text: 'https://hayase.watch'
+            large_text: 'https://AnimeTv.watch'
           },
           buttons: [
             {
-              label: 'Download app',
-              url: 'https://hayase.watch/download'
-            },
-            {
-              label: 'Watch on Hayase',
-              url: 'hayase://anime/' + this.mediaId
+              label: 'Watch on AnimeTv',
+              url: 'AnimeTv://anime/' + this.mediaId
             }
           ],
           party: {
